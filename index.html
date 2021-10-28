@@ -18,6 +18,17 @@ html,body{
 <body>
 
 <audio id="mySound" src='1.mp3'></audio>
+	
+	<audio id="Jaudio" class="media-audio" src="1.mp3" preload loop="loop"></audio >
+
+function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        audio.play();
+    }, false);
+}
+audioAutoPlay('mySound');
 
 <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
 <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas" ></canvas>
